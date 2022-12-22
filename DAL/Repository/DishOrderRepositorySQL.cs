@@ -17,24 +17,24 @@ namespace DAL.Repository
         }
         public void Create(DishOrder item)
         {
-            db.DishOrder.Add(item);
+            db.DishOrders.Add(item);
         }
 
         public void Delete(int id)
         {
-            DishOrder item = db.DishOrder.Find(id);
+            DishOrder item = db.DishOrders.Find(id);
             if (item != null)
-                db.DishOrder.Remove(item);
+                db.DishOrders.Remove(item);
         }
 
         public List<DishOrder> GetAll()
         {
-            return db.DishOrder.ToList();
+            return db.DishOrders.ToList();
         }
 
         public DishOrder GetItem(int id)
         {
-            return db.DishOrder.Find(id);
+            return db.DishOrders.Find(id);
         }
 
         public void Update(DishOrder item)

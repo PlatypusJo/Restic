@@ -17,24 +17,24 @@ namespace DAL.Repository
         }
         public void Create(Chef item)
         {
-            db.Chef.Add(item);
+            db.Chefs.Add(item);
         }
 
         public void Delete(int id)
         {
-            Chef item = db.Chef.Find(id);
+            Chef item = db.Chefs.Find(id);
             if (item != null)
-                db.Chef.Remove(item);
+                db.Chefs.Remove(item);
         }
 
         public List<Chef> GetAll()
         {
-            return db.Chef.ToList();
+            return db.Chefs.ToList();
         }
 
         public Chef GetItem(int id)
         {
-            return db.Chef.Find(id);
+            return db.Chefs.Find(id);
         }
 
         public void Update(Chef item)

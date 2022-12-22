@@ -10,26 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ViewModel;
 using BLL.Interfaces;
 using WpfApp1.Util;
 
-
-
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AdminWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminWindow : Window
     {
-        public MainWindow(IDbCrud dbCrud, IMenu menu, IOrder order, IDialogService dialogService)
+        public AdminWindow(IDbCrud dbCrud, IMenu menu, IOrder order, IDialogService dialogService, IAdmin admin)
         {
             InitializeComponent();
 
-            this.DataContext = new MainVM(dbCrud, menu, order);
+            this.DataContext = new AdminVM(dbCrud, menu, order, admin);
         }
     }
 }

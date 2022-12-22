@@ -10,26 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ViewModel;
 using BLL.Interfaces;
 using WpfApp1.Util;
 
-
-
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ChefWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChefWindow : Window
     {
-        public MainWindow(IDbCrud dbCrud, IMenu menu, IOrder order, IDialogService dialogService)
+        public ChefWindow(IDbCrud dbCrud, IMenu menu, IOrder order, IDialogService dialogService)
         {
             InitializeComponent();
 
-            this.DataContext = new MainVM(dbCrud, menu, order);
+            this.DataContext = new ChefVM(dbCrud, menu, order);
         }
     }
 }

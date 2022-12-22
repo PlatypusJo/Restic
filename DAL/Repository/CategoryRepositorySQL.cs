@@ -17,24 +17,24 @@ namespace DAL.Repository
         }
         public void Create(Category item)
         {
-            db.Category.Add(item);
+            db.Categories.Add(item);
         }
 
         public void Delete(int id)
         {
-            Category item = db.Category.Find(id);
+            Category item = db.Categories.Find(id);
             if (item != null)
-                db.Category.Remove(item);
+                db.Categories.Remove(item);
         }
 
         public List<Category> GetAll()
         {
-            return db.Category.ToList();
+            return db.Categories.ToList();
         }
 
         public Category GetItem(int id)
         {
-            return db.Category.Find(id);
+            return db.Categories.Find(id);
         }
 
         public void Update(Category item)

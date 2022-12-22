@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.ViewModel;
-using BLL.Interfaces;
-using WpfApp1.Util;
 
-
-
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Order.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Order : UserControl
     {
-        public MainWindow(IDbCrud dbCrud, IMenu menu, IOrder order, IDialogService dialogService)
+        public Order()
         {
             InitializeComponent();
-
-            this.DataContext = new MainVM(dbCrud, menu, order);
         }
     }
 }

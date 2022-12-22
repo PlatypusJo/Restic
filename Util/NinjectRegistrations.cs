@@ -4,7 +4,7 @@ using BLL;
 using BLL.Services;
 using System.Windows.Controls;
 using WpfApp1.ViewModel;
-
+using Menu = BLL.Services.Menu;
 
 namespace View.Util
 {

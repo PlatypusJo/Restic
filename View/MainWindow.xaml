@@ -5,11 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
-        xmlns:view="clr-namespace:WpfApp1.View" xmlns:viewmodel="clr-namespace:WpfApp1.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainVM}"
+        xmlns:view="clr-namespace:WpfApp1.View" xmlns:viewmodel="clr-namespace:WpfApp1.ViewModel"
         mc:Ignorable="d"
         Background="Transparent"
         Title="MainWindow" Height="800" Width="1100" WindowStartupLocation="CenterScreen">
-    <Grid Background="#b05f6d" >
+    <Grid Background="#1FAB89" >
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="70"></RowDefinition>
@@ -29,7 +29,7 @@
         <!--Menu-->
         <TabControl Style="{StaticResource MaterialDesignNavigatilRailTabControl}" 
                     Grid.Column="0" Grid.Row="1"
-                    Margin="0" Background="#b05f6d"
+                    Margin="0" Background="#1FAB89"
                     materialDesign:ColorZoneAssist.Mode="Standard"                 
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TabStripPlacement="Top" Grid.RowSpan="2"
                     HorizontalContentAlignment="Center">

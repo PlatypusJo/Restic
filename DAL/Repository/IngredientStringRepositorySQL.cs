@@ -17,24 +17,24 @@ namespace DAL.Repository
         }
         public void Create(IngredientString item)
         {
-            db.IngredientString.Add(item);
+            db.IngredientStrings.Add(item);
         }
 
         public void Delete(int id)
         {
-            IngredientString item = db.IngredientString.Find(id);
+            IngredientString item = db.IngredientStrings.Find(id);
             if (item != null)
-                db.IngredientString.Remove(item);
+                db.IngredientStrings.Remove(item);
         }
 
         public List<IngredientString> GetAll()
         {
-            return db.IngredientString.ToList();
+            return db.IngredientStrings.ToList();
         }
 
         public IngredientString GetItem(int id)
         {
-            return db.IngredientString.Find(id);
+            return db.IngredientStrings.Find(id);
         }
 
         public void Update(IngredientString item)

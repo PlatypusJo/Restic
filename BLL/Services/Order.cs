@@ -31,7 +31,7 @@ namespace BLL.Services
                 position = orders[orders.Count - 1].Order_Number + 1 % 100;
             }
 
-            DAL.Order order = new DAL.Order
+            DAL.Classes.Order order = new DAL.Classes.Order
             {
                 Chef_FK = chef,
                 Order_Date = System.DateTime.UtcNow,
@@ -48,7 +48,7 @@ namespace BLL.Services
 
             foreach (var dish in dishes)
             {
-                DAL.DishOrder dishOrder = new DishOrder();
+                DAL.Classes.DishOrder dishOrder = new DishOrder();
                 dishOrder.Ready = false;
                 dishOrder.Dish_FK = dish.Dish_ID;
                 dishOrder.Order_FK = orders[orders.Count - 1].Order_ID;

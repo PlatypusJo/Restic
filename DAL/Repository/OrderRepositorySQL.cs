@@ -17,24 +17,24 @@ namespace DAL.Repository
         }
         public void Create(Order item)
         {
-            db.Order.Add(item);
+            db.Orders.Add(item);
         }
 
         public void Delete(int id)
         {
-            Order item = db.Order.Find(id);
+            Order item = db.Orders.Find(id);
             if (item != null)
-                db.Order.Remove(item);
+                db.Orders.Remove(item);
         }
 
         public List<Order> GetAll()
         {
-            return db.Order.ToList();
+            return db.Orders.ToList();
         }
 
         public Order GetItem(int id)
         {
-            return db.Order.Find(id);
+            return db.Orders.Find(id);
         }
 
         public void Update(Order item)
