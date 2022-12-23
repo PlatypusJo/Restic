@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using BLL.Interfaces;
 using DAL.Classes;
 using BLL.Models;
 using DAL;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace BLL
 {
@@ -20,18 +22,26 @@ namespace BLL
         }
         public List<OrderModel> GetAllOrderModels()
         {
-            var result = dataBase.Orders.GetAll().Select(i => new OrderModel(i)).ToList();
-            foreach (var i in result)
+            try
             {
-                foreach (var j in dataBase.Statuss.GetAll())
+                var result = dataBase.Orders.GetAll().Select(i => new OrderModel(i)).ToList();
+                foreach (var i in result)
                 {
-                    if (i.Status_FK == j.Status_ID)
+                    foreach (var j in dataBase.Statuss.GetAll())
                     {
-                        i.Status = j.Status1;
+                        if (i.Status_FK == j.Status_ID)
+                        {
+                            i.Status = j.Status1;
+                        }
                     }
                 }
+                return result;
             }
-            return result;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
         public List<DishOrdersModel> GetAllOrderDishes()
         {
